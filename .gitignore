@@ -1,0 +1,20 @@
+# Dependencies & build artifacts
+node_modules/
+__pycache__/
+*.pyc
+*.vsix
+dist/
+build/
+.env
+
+# Editor & OS clutter
+.vscode/
+.DS_Store
+Thumbs.db
+
+# .NET build artifacts
+**/bin/
+**/obj/
+**/publish/
+*.pdb
+*.csproj.user

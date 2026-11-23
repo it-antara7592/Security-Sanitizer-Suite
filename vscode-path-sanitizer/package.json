@@ -1,0 +1,91 @@
+{
+  "name": "security-path-sanitizer",
+  "displayName": "Security Path Sanitizer",
+  "description": "Protects your Windows username by sanitizing personal paths when copying from VS Code editor and terminal.",
+  "version": "1.0.0",
+  "publisher": "it-antara7592",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/it-antara7592/security-sanitizer-suite.git",
+    "directory": "vscode-path-sanitizer"
+  },
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "extensionKind": [
+    "ui"
+  ],
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "security",
+    "privacy",
+    "path-sanitizer",
+    "terminal",
+    "windows",
+    "username"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Security Path Sanitizer",
+      "properties": {
+        "pathSanitizer.realUsername": {
+          "type": "string",
+          "default": "",
+          "description": "Actual Windows profile folder name. Leave empty to detect it automatically."
+        },
+        "pathSanitizer.aliasUsername": {
+          "type": "string",
+          "default": "admin",
+          "description": "Replacement username used when copying paths."
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "path-sanitizer.terminalCopy",
+        "title": "Path Sanitizer: Copy Terminal Selection"
+      },
+      {
+        "command": "path-sanitizer.terminalPaste",
+        "title": "Path Sanitizer: Paste into Terminal"
+      },
+      {
+        "command": "path-sanitizer.editorCopy",
+        "title": "Path Sanitizer: Copy Editor Selection"
+      },
+      {
+        "command": "path-sanitizer.editorPaste",
+        "title": "Path Sanitizer: Paste into Editor"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "path-sanitizer.editorCopy",
+        "key": "ctrl+shift+alt+c",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "path-sanitizer.editorPaste",
+        "key": "ctrl+shift+alt+v",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "path-sanitizer.terminalCopy",
+        "key": "ctrl+shift+alt+c",
+        "when": "terminalFocus && terminalTextSelected"
+      },
+      {
+        "command": "path-sanitizer.terminalPaste",
+        "key": "ctrl+shift+alt+v",
+        "when": "terminalFocus"
+      }
+    ]
+  }
+}

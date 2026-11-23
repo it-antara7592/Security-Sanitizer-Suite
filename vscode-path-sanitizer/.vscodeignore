@@ -1,0 +1,11 @@
+.vscode/**
+.vscode-test/**
+**/.git/**
+**/.gitignore
+**/obj/**
+**/bin/**
+**/*.cs
+**/*.csproj
+**/*.pdb
+windows-clipboard-helper/ClipboardListenerPrototype/README.md
+**/*.csproj.user
